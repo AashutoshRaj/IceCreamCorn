@@ -67,8 +67,8 @@ const BannerCenterStyle = styled.div`
   .cupImage {
     position: absolute;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    // left: 50%;
+    // transform: translateX(-50%);
     z-index: 10;
   }
 
@@ -102,7 +102,7 @@ const BannerCenterSlide = () => {
     // ----- ScrollTrigger timeline for cup (fade in -> fade out) -----
    const mm = gsap.matchMedia();
 
-mm.add({
+mm.add({ 
   isDesktop: "(min-width: 769px)",
   isMobile: "(max-width: 768px)",
 }, (context) => {
@@ -120,7 +120,7 @@ mm.add({
   if (isDesktop) {
     tl.fromTo(
       cupRef.current,
-      { y: "10%", x: "0%", scale: 1.3 },
+      { y: "10%", x: "10%", scale: 1.3 },
       { y: "50%", x: "-40%", scale: 1, opacity: 1, ease: "none" }
     ).to(cupRef.current, {
       y: "107%",
@@ -128,7 +128,7 @@ mm.add({
       opacity: 0,
       ease: "none",
     });
-  }
+  } 
 
   if (isMobile) {
     tl.fromTo(
@@ -142,7 +142,7 @@ mm.add({
     });
   }
 });
-
+ 
 
 
     // ----- Mouse parallax effect -----
